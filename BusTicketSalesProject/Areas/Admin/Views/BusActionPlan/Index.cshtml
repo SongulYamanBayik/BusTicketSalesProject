@@ -1,0 +1,44 @@
+﻿@using Entity_Layer.Concrete
+@model List<Bus>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-2">
+           
+        </div>
+        <div class="col-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Plaka</th>
+                        <th scope="col">Koltuk Sayısı</th>
+                        <th scope="col">Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var bus in Model)
+                    {
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>@bus.Plate</td>
+                        <td>@bus.NumberOfSeats</td>
+                        <td>@bus.Status</td>
+                        <td><a href="/BusActionPlan/ChangeStatus/@bus.BusID" class="btn btn-danger" /> Sil</td>
+
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2">
+       
+        </div>
+    </div>
+</div>
